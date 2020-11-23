@@ -1,0 +1,14 @@
+
+  <button class="btn btn-success"> <%= link_to 'Add a desk!', new_desk_path %></button>
+
+<div class="container mt-4">
+  <div class="cards">
+    <% @desks.each do |desk| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
+        <h3 id="card-text"><%= link_to desk.title, desk_path(desk) %></h3>
+        <%= link_to desk_path(desk), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="fas fa-trash-alt" id="cards"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
