@@ -1,6 +1,17 @@
-.navbar-lewagon {
+.ul-navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 15px 25px;
+}
+
+.li-navbar {
+  display: inline;
+}
+
+.navbar {
+  padding: 3px;
   justify-content: space-between;
-  background: white;
+  background: black;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +20,30 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+li a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: white;
+  color: black;
+}
+
+a {
+  font-family: 'Major Mono Display', monospace;
+}
+
+.search-container {
+  border: none;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: grey;
+  font-family: 'HelveticaNeue-Light';
 }
