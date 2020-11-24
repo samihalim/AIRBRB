@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edit, :update, :destroy, :new, :create]
+
+  before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   def index
     @bookings = Booking.all
@@ -10,6 +11,7 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @desk = Desk.find(params[:desk_id])
   end
 
   def edit
