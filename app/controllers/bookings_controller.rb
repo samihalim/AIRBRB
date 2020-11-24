@@ -18,7 +18,6 @@ class BookingsController < ApplicationController
   end
 
   def create
-    flatpickr
     booking = Booking.new(booking_params)
     desk = Desk.find(params[:desk_id])
     booking.desk = desk
@@ -52,7 +51,7 @@ class BookingsController < ApplicationController
   private
 
   def set_booking
-    @booking = Booking.find(params[:desk_id])
+    @booking = Booking.find(params[:id])
   end
 
   def booking_params
