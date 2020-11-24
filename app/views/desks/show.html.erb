@@ -8,5 +8,5 @@
   <h3><%= @desk.seats %> seats </h3>
   <%= link_to "Back to all desks", root_path %>
 
-<button class="btn btn-success"> <%= link_to 'Book this desk!', my_bookings_path %></button>
+<button class="btn btn-success"> <%= link_to 'Book this desk!', new_desk_booking_path(@desk)  %></button>
 </div>
