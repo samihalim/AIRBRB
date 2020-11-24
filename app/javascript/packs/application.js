@@ -30,7 +30,11 @@ import "../plugins/flatpickr"
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
-  flatpickr(".datepicker", {});
+  flatpickr(".datepicker", {
+    altInput: true,
+    enableTime: true,
+    minDate: "today",
+  });
   // Call your functions here, e.g:
   // initSelect2();
 });
