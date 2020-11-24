@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 2020_11_23_124035) do
 
   create_table "desks", force: :cascade do |t|
     t.integer "price"
-    t.string "title"
     t.string "location"
     t.integer "seats"
     t.datetime "start_date"
