@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'desks#index'
   resources :desks do
-    resources :bookings, only: :create
+    resources :bookings, only: [:create, :new]
   end
 
-  resources :bookings, except: :create
+  resources :bookings, except: [:create, :new]
   get "my_bookings", to:"bookings#my_bookings"
   get "my_desks", to:"desks#my_desks"
 

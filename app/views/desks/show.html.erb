@@ -3,13 +3,13 @@
 <div class="container">
   <div class="columns">
 <%= cl_image_tag(@desk.photo.key,
-      width: 400, height: 300, crop: :fill) %>
+      width: 400, height: 300, crop: :fill) if @desk.photo.attached? %>
   <h1><%= @desk.title %></h1>
   <h2>$<%= @desk.price %></h2>
   <h3> Address: <%= @desk.location %></h3>
   <h3><%= @desk.seats %> seats </h3>
   <%= link_to "Back to all desks", root_path %>
   <%= link_to "Edit desk", edit_desk_path %>
-  <button class="btn btn-success"> <%= link_to 'Book this desk!', new_desk_booking_path(@desk)  %></button>
+  <button class="btn btn-success"> <%= link_to 'Book this desk!', new_desk_booking_path(@desk) %></button>
 </div>
 </div>
