@@ -40,13 +40,10 @@
 }
 
 .card-category {
-  padding: 120px 20px 20px 20px;
+  padding: 100px 20px;
   background-size: cover;
-  background-position: center;
   height: 250px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   color: white;
   font-size: 12px;
   font-weight: bold;
@@ -54,6 +51,7 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   position: relative;
+  bottom: 0px;
 }
 
 #cards{
@@ -64,10 +62,10 @@
 
 #card-text a {
   color:white;
-  font-family: "Helvetica";
-  font-size: 20px;
 
-  font-weight: bold;
+  font-family: "Helvetica Neue";
+
+  font-size: 20px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
