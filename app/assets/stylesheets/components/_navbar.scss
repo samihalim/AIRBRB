@@ -11,7 +11,7 @@
 .navbar {
   padding: 3px;
   justify-content: space-between;
-  background: black;
+  background: #06d6a0;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -29,7 +29,7 @@ li a {
 }
 
 li a:hover {
-  background-color: white;
+  opacity: 0.2;
   color: black;
 }
 

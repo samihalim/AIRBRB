@@ -1,5 +1,3 @@
-  <button class="btn btn-success"> <%= link_to 'Add a desk!', new_desk_path %></button>
-
 <div class="container mt-4">
   <div class="cards">
     <% @desks.each do |desk| %>
@@ -10,5 +8,9 @@
         <% end %>
       </div>
     <% end %>
+     </div>
   </div>
-   </div>
+  <div class="container">
+    <%= link_to 'add a desk !', new_desk_path, class: "btn btn-outline-success" %>
+</div>
+
