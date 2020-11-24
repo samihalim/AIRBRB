@@ -1,11 +1,15 @@
 <div class="navbar">
   <%= image_tag "nav_logo.png", size: "50x50" %>
   <ul class="ul-navbar">
-    <li class="li-navbar"><a href="explore.asp">explore</a></li>
-    <li class="li-navbar"><%= link_to 'Sign Up', new_user_registration_path%></li>
-    <li class="li-navbar"><%= link_to 'Login In', new_user_session_path%></li>
-    <li class="li-navbar"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+    <li class="li-navbar"><%= link_to 'Explore', desks_path%></li>
+    <% if current_user %>
+      <li class="li-navbar"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+    <% else %>
+      <li class="li-navbar"><%= link_to 'Sign Up', new_user_registration_path%></li>
+      <li class="li-navbar"><%= link_to 'Login In', new_user_session_path%></li>
+    <% end %>
     <li class="li-navbar"><a href="about.asp">about</a></li>
     <input class="search-container" type="text" placeholder="Search...">
   </ul>
 </div>
+
