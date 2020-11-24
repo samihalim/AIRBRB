@@ -2,7 +2,8 @@ class DesksController < ApplicationController
   before_action :set_desk, only: [:show, :edit, :update, :destroy]
 
   def index
-    @desks = Desk.all
+    @desks = Desk.all.order(updated_at: :desc)
+
   end
 
   def show
