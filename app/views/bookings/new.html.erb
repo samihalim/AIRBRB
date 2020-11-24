@@ -6,9 +6,15 @@
 
       <h1>Make a Reservation</h1>
         <%= simple_form_for [@desk, @booking] do |f| %>
+<<<<<<< HEAD
         <h2><%= @desk.title %></h2> for <h1>$<%= @desk.price %></h1>
         <%= f.input :start_date %>
         <%= f.input :end_date %>
+=======
+        <p><%= @desk.title %> for $<%= @desk.price %></p>
+        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+>>>>>>> eff9eadc987add3310fc8efc4c3cc9fa7a24ac04
         <%= f.button :submit, class: "btn btn-primary" %>
       <% end %>
     </div>

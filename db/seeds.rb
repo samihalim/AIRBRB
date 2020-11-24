@@ -25,7 +25,13 @@ User.create(first_name: 'Sam', last_name: 'Bam', email: 'bb@a.com', password: '6
    )
 end
 
-
+3.times do
+  Booking.create(
+    start_date: DateTime.new(2020, 11, 11),
+    end_date: DateTime.new(2020, 11, 13),
+    )
+end
 
 puts "#{Desk.count} Desks created"
 puts "#{User.count} Users created"
+puts "#{Booking.count} Bookings created"
