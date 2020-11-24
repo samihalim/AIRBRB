@@ -18,10 +18,15 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
-    @booking.desk = current_user
-    if @booking.save!
-      redirect_to @booking, notice: 'A booking was successfully created.'
+    flatpickr
+    booking = Booking.new(booking_params)
+    desk = Desk.find(params[:desk_id])
+    booking.desk = desk
+    booking.user = current_user
+
+    if booking.save!
+      redirect_to booking, notice: 'A booking was successfully created.'
+
     else
       render :new
     end

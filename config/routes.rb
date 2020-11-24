@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'desks#index'
   resources :desks do
-    resources :bookings
+    resources :bookings, shallow: true
   end
   get "my_bookings", to:"bookings#my_bookings"
   get "my_desks", to:"desks#my_desks"
