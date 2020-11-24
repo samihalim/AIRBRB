@@ -1,12 +1,15 @@
 
-<div class="container">
+<h1>My Bookings!</h1>
+<div class="container mt-4">
   <div class="cards">
-    <ul>
-      <% @bookings.each do |booking| %>
-      <li> From: <%= booking.start_date %> - To: <%= booking.end_date %> </li>
-      <% end %>
-    </ul>
+    <% @bookings.each do |booking| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
+      <h3 id="card-text"><%= link_to booking.start_date, booking_path(booking) %></h3>
+        <h3 id="card-text">From: <%= booking.start_date %> - To: <%= booking.end_date %></h3>
+        <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="fas fa-trash-alt" id="cards"></i>
+        <% end %>
+      </div>
+    <% end %>
   </div>
-</div>
-
-
+   </div>
