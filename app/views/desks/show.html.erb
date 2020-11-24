@@ -1,0 +1,12 @@
+<h1>Your selection</h1>
+
+<div class="container">
+
+  <h1><%= @desk.title %></h1>
+  <h2>$<%= @desk.price %></h2>
+  <h3> Address: <%= @desk.location %></h3>
+  <h3><%= @desk.seats %> seats </h3>
+  <%= link_to "Back to all desks", root_path %>
+
+<button class="btn btn-success"> <%= link_to 'Book this desk!', my_bookings_path %></button>
+</div>
