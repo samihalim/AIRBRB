@@ -1,5 +1,5 @@
 <div class="navbar">
-  <%= image_tag "nav_logo.png", size: "50x50" %>
+  <%= link_to(image_tag("nav_logo.png", size: "50x50"), desks_path) %>
   <ul class="ul-navbar">
     <li class="li-navbar"><%= link_to 'Explore', desks_path%></li>
     <% if current_user %>
@@ -13,3 +13,5 @@
   </ul>
 </div>
 
+<!-- link_to image_tag("path/to/image.png"), "http://www.mysite.com/"
+ -->
