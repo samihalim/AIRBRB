@@ -6,7 +6,7 @@
 
       <h1>Make a Reservation</h1>
         <%= simple_form_for [@desk, @booking] do |f| %>
-        <p><%= @desk.title %> for $<%= @desk.price %></p>
+        <h2><%= @desk.title %></h2> for <h1>$<%= @desk.price %></h1>
         <%= f.input :start_date %>
         <%= f.input :end_date %>
         <%= f.button :submit, class: "btn btn-primary" %>
