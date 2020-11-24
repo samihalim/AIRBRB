@@ -4,28 +4,28 @@ class BookingsController < ApplicationController
   def index
     # @bookings = Booking.all
     @my_bookings = current_user.bookings
-    @booking_as_owner = current_user.booking_as_owner
+    @bookings_as_owner = current_user.bookings_as_owner
   end
 
   def show
   end
 
   def new
-    @booking = Booking.new
     @desk = Desk.find(params[:desk_id])
+    @booking = Booking.new
   end
 
   def edit
   end
 
   def create
-    booking = Booking.new(booking_params)
-    desk = Desk.find(params[:desk_id])
-    booking.desk = desk
-    booking.user = current_user
+    @desk = Desk.find(params[:desk_id])
+    @booking = Booking.new(booking_params)
+    @booking.desk = @desk
+    @booking.user = current_user
 
-    if booking.save!
-      redirect_to booking, notice: 'A booking was successfully created.'
+    if @booking.save!
+      redirect_to @booking, notice: 'A booking was successfully created.'
 
     else
       render :new
