@@ -7,8 +7,8 @@
       <h1>Make a Reservation</h1>
         <%= simple_form_for [@desk, @booking] do |f| %>
         <p><%= @desk.title %> for $<%= @desk.price %></p>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
+        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
         <%= f.button :submit, class: "btn btn-primary" %>
       <% end %>
     </div>
