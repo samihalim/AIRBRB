@@ -1,7 +1,16 @@
-<h1>Make a Reservation</h1>
-
 <!-- link to the bookings#indexpage in the navbar. -->
-<h2>Your selection:</h2>
-<img src="" alt="">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <!-- link to the bookings#indexpage in the navbar. -->
 
-<button>Submit booking</button>
+      <h1>Make a Reservation</h1>
+        <%= simple_form_for [@desk, @booking] do |f| %>
+        <p><%= @desk.title %> for $<%= @desk.price %></p>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
