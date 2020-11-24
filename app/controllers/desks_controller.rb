@@ -49,6 +49,6 @@ class DesksController < ApplicationController
   end
 
   def desk_params
-    params.require(:desk).permit(:price, :location, :seats, :start_date, :end_date)
+    params.require(:desk).permit(:title, :price, :location, :seats, :start_date, :end_date)
   end
 end
