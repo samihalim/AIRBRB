@@ -8,4 +8,6 @@ class Desk < ApplicationRecord
   validates :title, presence: true, allow_blank: false
   validates :start_date, presence: true
   validates :end_date, presence: true
+
+  has_one_attached :photo
 end
