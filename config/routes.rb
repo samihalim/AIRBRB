@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   get "my_bookings", to:"bookings#my_bookings"
   get "my_desks", to:"desks#my_desks"
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # For further details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
