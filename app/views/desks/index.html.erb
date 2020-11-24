@@ -1,15 +1,19 @@
   <div class="container">
-    <%= link_to 'add a desk !', new_desk_path, class: "btn btn-outline-success" %>
+    <%= link_to 'add a desk now', new_desk_path, class: "btn btn-outline-success" %>
 </div>
 
 <div class="container mt-4">
   <div class="cards">
     <% @desks.each do |desk| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path desk.photo.key, height: 300, width: 400, crop: :fill  if desk.photo.attached?%>')">
-        <h3 id="card-text"><%= link_to desk.title, desk_path(desk) %></h3>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
+      <div class="columns">
+        <p id="card-text"><%= link_to desk.title, desk_path(desk) %></p>
+        <h3>  $<%= desk.price %>  </h3>
+        <p>  available for <%= desk.start_date %>  </p>
         <%= link_to desk_path(desk), method: :delete, data: { confirm: "Are you sure?" } do %>
           <i class="fas fa-trash-alt" id="cards"></i>
         <% end %>
+        </div>
       </div>
     <% end %>
      </div>

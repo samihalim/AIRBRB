@@ -29,12 +29,21 @@ li a {
 }
 
 li a:hover {
-  opacity: 0.2;
-  color: black;
+  opacity: 0.9;
+  color: gray;
+  text-decoration: none;
+  text-shadow: 1px 1px rgba(0,0,0,0.2);
 }
 
 a {
   font-family: 'Major Mono Display', monospace;
+}
+
+a:hover {
+  opacity: 0.9;
+  color: gray;
+  text-decoration: none;
+  text-shadow: 1px 1px rgba(0,0,0,0.9);
 }
 
 .search-container {
