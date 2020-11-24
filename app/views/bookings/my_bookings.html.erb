@@ -1,0 +1,19 @@
+<!-- my bookings for desks i rented out -->
+<h2>My rented out desks</h2>
+<div class="container">
+  <div class="cards">
+    <ul>
+      <% @bookings.each do |booking| %>
+      <li> From: <%= booking.start_date %> - To: <%= booking.end_date %> </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+<!-- my bookings for desks i'm renting -->
+<h2>My booked desks </h2>
+

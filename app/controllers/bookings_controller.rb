@@ -34,7 +34,7 @@ class BookingsController < ApplicationController
   end
 
   def my_bookings
-    currentuser.bookings
+    @bookings = current_user.bookings
   end
 
   def destroy
