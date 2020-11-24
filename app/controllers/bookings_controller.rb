@@ -18,6 +18,7 @@ class BookingsController < ApplicationController
   end
 
   def create
+    flatpickr
     booking = Booking.new(booking_params)
     desk = Desk.find(params[:desk_id])
     booking.desk = desk
@@ -25,6 +26,7 @@ class BookingsController < ApplicationController
 
     if booking.save!
       redirect_to booking, notice: 'A booking was successfully created.'
+
     else
       render :new
     end
@@ -39,7 +41,7 @@ class BookingsController < ApplicationController
   end
 
   def my_bookings
-    currentuser.bookings
+    @bookings = current_user.bookings
   end
 
   def destroy
@@ -50,7 +52,7 @@ class BookingsController < ApplicationController
   private
 
   def set_booking
-    @booking = Booking.find(params[:id])
+    @booking = Booking.find(params[:desk_id])
   end
 
   def booking_params
