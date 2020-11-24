@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-
+    @booking.desk = current_user
     if @booking.save!
       redirect_to @booking, notice: 'A booking was successfully created.'
     else
@@ -47,7 +47,7 @@ class BookingsController < ApplicationController
   private
 
   def set_booking
-    @booking = Booking.find(params[:id])
+    @booking = Booking.find(params[:desk_id])
   end
 
   def booking_params

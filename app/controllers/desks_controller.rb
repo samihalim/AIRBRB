@@ -19,6 +19,7 @@ class DesksController < ApplicationController
 
   def create
     @desk = Desk.new(desk_params)
+    @desk.user = current_user
 
     if @desk.save!
       redirect_to @desk, notice: 'A desk was successfully created.'
