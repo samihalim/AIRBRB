@@ -1,9 +1,9 @@
 // Specific CSS for your home-page
 .btn-outline-success {
-  margin: 50px;
-  padding: 20px 20px;
+  display: flex;
+  margin: 20px 20px 2px 2px;
+  padding: 10px 10px;
   background-color: #06d6a0;
-  border-radius: 5px;
   border-color: #06d6a0;
   color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -11,10 +11,12 @@
 
 .btn-outline-success:hover {
   background-color: #06d6a0;
+  opacity: 0.9;
+  color: gray;
+  text-decoration: none;
+  text-shadow: 1px 1px rgba(0,0,0,0.2);
 }
 
 .container {
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
