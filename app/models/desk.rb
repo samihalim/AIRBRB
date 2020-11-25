@@ -1,5 +1,5 @@
 class Desk < ApplicationRecord
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   belongs_to :user
 
   validates :price, presence: true, allow_blank: false
