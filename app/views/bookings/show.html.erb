@@ -1,6 +1,9 @@
-<div class="container"></div>
-<%= cl_image_tag(@booking.desk.photo.key,
-      width: 400, height: 300, crop: :fill) %>
+<div class="container">
+  <% if @booking.desk.photo.attached? %>
+  <%= cl_image_tag(@booking.desk.photo.key,
+  width: 400, height: 300, crop: :fill) %>
+  <% end %>
   <h1><%= @booking.start_date %></h1>
   <h2>$<%= @booking.end_date %></h2>
 
+</div>
