@@ -12,6 +12,9 @@
   <h4> Available from: <%= @desk.start_date %></h4> <h4> until: <%= @desk.end_date %></h4>
   <%= link_to "Back to all desks", root_path %>
   <%= link_to "----- Edit desk -----", edit_desk_path %>
+<% user = User.find(@desk.user_id) %>
+<% if user != current_user %>
   <button class="btn btn-success"> <%= link_to 'Book this desk!', new_desk_booking_path(@desk) %></button>
+<% end %>
 </div>
 </div>
