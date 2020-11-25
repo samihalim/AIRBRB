@@ -1,7 +1,7 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 12px;
+  grid-gap: 16px;
 }
 
 // Smallest device
@@ -40,18 +40,19 @@
 }
 
 .card-category {
-  padding: 100px 20px;
   background-size: cover;
-  height: 250px;
+  background-position: center;
+  height: 180px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
-  font-size: 12px;
+  font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   position: relative;
-  bottom: 0px;
 }
 
 #cards{
@@ -60,17 +61,6 @@
   right: 10px
 }
 
-#card-text a {
-  color:white;
-
-  font-family: "Helvetica Neue";
-
-  font-size: 20px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-
-.fa-trash-alt {
+.card-title {
   color: white;
-  size: 12px;
 }
-
