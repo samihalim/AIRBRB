@@ -8,18 +8,12 @@
     <%= link_to 'add a desk now', new_desk_path, class: "btn btn-outline-success" %>
   </div>
 
-
-
-
-  <br>
-  <div class="cards row">
-    <div class="card card-category" style="width: 18rem;">
-      <% @desks.each do |desk| %>
+<div class="cards">
+   <% @desks.each do |desk| %>
       <% if desk.photo.attached? %>
-      <img src="<%= cl_image_path(desk.photo.key,
-      width: 400, height: 300, crop: :fill) %>" class="card-img-top">
-      <div class="card-body">
-        <h5 class="card-title"><%= link_to desk.title, desk_path(desk) %></h5>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+   url(<%= cl_image_path(desk.photo.key) %>)">
+      <h5 class="card-desk"><%= link_to desk.title, desk_path(desk) %></h5>
         <p class="card-text">$<%= desk.price %></p>
         <%= link_to desk_path(desk), method: :delete, data: { confirm: "Are you sure?" } do %>
         <i class="fas fa-trash-alt" id="cards"></i>
@@ -27,6 +21,8 @@
       </div>
       <% end %>
       <% end %>
-    </div>
   </div>
+
+
+
 
