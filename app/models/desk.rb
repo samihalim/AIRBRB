@@ -1,5 +1,5 @@
 class Desk < ApplicationRecord
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   belongs_to :user
 
   validates :price, presence: true, allow_blank: false
@@ -10,4 +10,6 @@ class Desk < ApplicationRecord
   validates :end_date, presence: true
 
   has_one_attached :photo
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 end
