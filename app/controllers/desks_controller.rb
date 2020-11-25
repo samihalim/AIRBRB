@@ -4,6 +4,7 @@ class DesksController < ApplicationController
 
   def index
     @desks = Desk.all.order(updated_at: :desc)
+    @user = current_user
     @markers = @desks.geocoded.map do |desk|
       {
         lat: desk.latitude,
@@ -17,6 +18,7 @@ class DesksController < ApplicationController
 
   def new
     @desk = Desk.new
+
   end
 
   def edit

@@ -19,10 +19,14 @@
        url('<%= cl_image_path(desk.photo.key,
         width: 400, height: 300, crop: :fill) %>')">
         <p id="card-text"><%= link_to desk.title, desk_path(desk) %></p>
-          <p> $<%= desk.price %>  </p>
-         <%= link_to desk_path(desk), method: :delete, data: { confirm: "Are you sure?" } do %>
-            <i class="fas fa-trash-alt" id="cards"></i>
-          <% end %>
+
+        <h3>  $<%= desk.price %>  </h3>
+        <p>  available from <%= desk.start_date %>  </p>
+        <p>  until <%= desk.end_date %>  </p>
+        <%= link_to desk_path(desk), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="fas fa-trash-alt" id="cards"></i>
+        <% end %>
+        </div>
       </div>
       <% end %>
     <% end %>
