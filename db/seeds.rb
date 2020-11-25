@@ -8,6 +8,7 @@
 require 'faker'
 require 'pry-byebug'
 
+Booking.destroy_all
 Desk.destroy_all
 User.destroy_all
 User.create(first_name: 'John', last_name: 'smith', email: 'a@a.com', password: '654321')

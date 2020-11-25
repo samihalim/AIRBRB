@@ -2,14 +2,24 @@
     <%= link_to 'add a desk now', new_desk_path, class: "btn btn-outline-success" %>
 </div>
 
+<br>
 
+  <div id="map"
+     style="width: 100%; height: 500px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+<br>
 
 <div class="container mt-4">
   <div class="cards">
-    <% @desks.each do |desk| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
-      <div class="columns">
+     <% @desks.each do |desk| %>
+      <% if desk.photo.attached? %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+       url('<%= cl_image_path(desk.photo.key,
+        width: 400, height: 300, crop: :fill) %>')">
         <p id="card-text"><%= link_to desk.title, desk_path(desk) %></p>
+
         <h3>  $<%= desk.price %>  </h3>
         <p>  available from <%= desk.start_date %>  </p>
         <p>  until <%= desk.end_date %>  </p>
@@ -18,6 +28,9 @@
         <% end %>
         </div>
       </div>
+      <% end %>
     <% end %>
-     </div>
   </div>
+
+</div>
+

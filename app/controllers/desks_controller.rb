@@ -2,10 +2,15 @@ class DesksController < ApplicationController
   before_action :set_desk, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:show, :index]
 
-
   def index
     @desks = Desk.all.order(updated_at: :desc)
     @user = current_user
+    @markers = @desks.geocoded.map do |desk|
+      {
+        lat: desk.latitude,
+        lng: desk.longitude
+      }
+    end
   end
 
   def show
