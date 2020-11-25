@@ -1,31 +1,44 @@
 <!-- my bookings for desks i rented out -->
 <!-- name of my desk, start_date, end-date of availability  -->
 <h2>My rented out desks</h2>
-<div class="container">
+
+<div class="container mt-4">
   <div class="cards">
-    <ul>
       <% @bookings_as_owner.each do |booking| %>
-      <li> From: <%= booking.start_date %> - To: <%= booking.end_date %> </li>
+      <% if booking.desk.photo.attached? %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_tag(booking.desk.photo.key,
+        width: 400, height: 300, crop: :fill) %>')">
+        <h3 id="card-text">From: <%= booking.start_date %> - To: <%= booking.end_date %> %></h3>
+        <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="fas fa-trash-alt" id="cards"></i>
+        <% end %>
+      </div>
       <% end %>
-    </ul>
+    <% end %>
   </div>
-</div>
+   </div>
 
-
-
+<br>
 
 <!-- my bookings for desks i'm renting -->
 <!-- name of the desk
 start-date, end-date of booking
 location-->
 <h2>My booked desks </h2>
-<div class="container">
+
+<div class="container mt-4">
   <div class="cards">
-    <ul>
       <% @my_bookings.each do |booking| %>
-      <li> From: <%= booking.start_date %> - To: <%= booking.end_date %> </li>
+      <% if booking.desk.photo.attached? %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_tag(booking.desk.photo.key,
+        width: 400, height: 300, crop: :fill) %>')">
+        <h3 id="card-text">From: <%= booking.start_date %> - To: <%= booking.end_date %> %></h3>
+        <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="fas fa-trash-alt" id="cards"></i>
+        <% end %>
+      </div>
       <% end %>
-    </ul>
+    <% end %>
   </div>
-</div>
+   </div>
 
