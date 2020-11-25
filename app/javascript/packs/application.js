@@ -29,12 +29,17 @@ import "../plugins/flatpickr"
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+  // Call your functions here, e.g:
+  // initSelect2();
+
+
+import { initMapbox } from '../plugins/mapbox';
+
 document.addEventListener('turbolinks:load', () => {
-  flatpickr(".datepicker", {
+  initMapbox();
+    flatpickr(".datepicker", {
     altInput: true,
     enableTime: true,
     minDate: "today",
   });
-  // Call your functions here, e.g:
-  // initSelect2();
-});
+})
