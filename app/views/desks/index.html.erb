@@ -1,6 +1,6 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.pinimg.com/originals/17/5e/da/175eda03beec29af20dfc40a38e5ac68.jpg);">
   <div class="container">
-    <h1>air<strong>BRB</strong></h1>
+    <h1>Air<strong>BRB</strong>, the solution to everything...</h1>
   </div>
 </div>
 
@@ -10,6 +10,7 @@
 
 <div class="row">
   <div class="col-8">
+
   <% @desks.each do |desk| %>
   <div class="card-product">
     <% if desk.photo.attached? %>
@@ -29,13 +30,10 @@
   <% end %>
   </div>
 
-<div class="col-4">Map placeholder</div>
-
-
-
-
+<div class="col-4">
+    <div id="map"
+    style="width: 100%; height: 500px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  </div>
 </div>
-
-
-
-
