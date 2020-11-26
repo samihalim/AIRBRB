@@ -1,54 +1,67 @@
 <!-- my bookings for desks i rented out -->
 
 <!-- name of my desk, start_date, end-date of availability  -->
-<div class="container">
-<h2>My rented desks</h2>
-
-<div class="container mt-4">
+  <div class="container">
+    <br>
+    <br>
+  <h2>My booked desks </h2>
+  <br>
   <div class="cards">
-    <% @bookings_as_owner.each do |booking| %>
+    <% @my_bookings.each do |booking| %>
     <% if booking.desk.photo.attached? %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(booking.desk.photo.key, width: 400, height: 300, crop: :fill) %>')">
-      <p id="card-text"><%= link_to booking.desk.title, booking_path(booking) %></p>
-    </div>
-    <% end %>
-    <% end %>
-  </div>
-
-
-<br>
-
-<!-- my bookings for desks i'm renting -->
-<!-- name of the desk
-start-date, end-date of booking
-location-->
-
-<h2>My booked desks </h2>
-<br>
-<br>
-
-  <div class="container-bookings">
-  <% @my_bookings.each do |booking| %>
-      <div class="cards-booking">
-        <% if booking.desk.photo.attached? %>
-           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-            url('<%= cl_image_path(booking.desk.photo.key)%>')">
-           </div>
-        <% else %>
-             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-            url('https://source.unsplash.com/weekly?desk')">
-             </div>
-        <% end %>
-        <p id="card-text"><%= link_to booking.desk.title, booking_path(booking) %></p>
-        <p id="card-text"><%= link_to booking.desk.title, booking_path(booking) %></p>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+      url('<%= cl_image_path booking.desk.photo.key %>')">
+      <% else %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+             url('https://source.unsplash.com/weekly?desk')">
+      <% end %>
+              <p id="card-text"><%= link_to booking.desk.title, booking_path(booking) %></p>
         <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %>
           <i class="fas fa-trash-alt" id="cards"></i>
         <% end %>
       </div>
-
     <% end %>
+  </div>
+
+
+  <h2>My rented desks </h2>
+    <br>
+    <div class="cards">
+      <% @bookings_as_owner.each do |booking| %>
+      <% if booking.desk.photo.attached? %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+        url('<%= cl_image_path booking.desk.photo.key %>')">
+        <% else %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+               url('https://source.unsplash.com/weekly?desk')">
+        <% end %>
+                <p id="card-text"><%= link_to booking.desk.title, booking_path(booking) %></p>
+          <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <i class="fas fa-trash-alt" id="cards"></i>
+          <% end %>
+        </div>
+      <% end %>
     </div>
+  </div>
 </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
