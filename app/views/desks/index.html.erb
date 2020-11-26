@@ -17,8 +17,8 @@
 </div>
 
 <div class="row">
-  <div class="col-8">
 
+  <div class="col-8">
   <% @desks.each do |desk| %>
   <div class="card-product">
     <% if desk.photo.attached? %>
@@ -45,4 +45,17 @@
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
 
+
+
+<script>
+
+var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/light-v10',
+  center: [-96, 37.8],
+  zoom: 3
+});
+
+
+</script>
 </div>
