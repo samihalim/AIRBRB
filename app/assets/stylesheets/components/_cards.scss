@@ -74,7 +74,67 @@
 
 .card-container {
   display: grid;
-  grid-template-columns: 1fr 1fr
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
+.card-product {
+  overflow: hidden;
+  height: 240px;
+  color: black;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  padding: 15px 15px;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+  border-radius: 5px 5px 5px 5px;
+  margin-top: 24px;
+  margin-bottom: 40px;
+  margin-left: 20px;
+}
 
+.card-product .link-to-card-product-1 {
+  color: hsl(0, 0%, 13%);
+  font-size: 25px;
+}
+
+.card-product .link-to-card-product-2 {
+  color: hsl(0, 0%, 13%);
+  font-weight: 400;
+}
+
+.card-product img {
+  height: 100%;
+  width: 400px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.card-product-infos h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
