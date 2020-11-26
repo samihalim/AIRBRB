@@ -35,6 +35,18 @@
             </div>
         </div>
     <% end %>
+
+    <div class="card-product-infos">
+      <h2><%= link_to desk.title, desk_path(desk), class:"link-to-card-product-1" %></h2>
+      <p>$<%= desk.price %> <strong>per day</strong></p>
+      <br>
+      <h2 class="link-to-card-product-2"> <%= desk.location%></h2>
+      <br>
+      <h2 class="link-to-card-product-2"><i class="fas fa-chair"> &#160; </i><%= desk.seats %></h2>
+    </div>
+  </div>
+  <% end %>
+
   </div>
 
   <div class="col-4">
