@@ -9,7 +9,7 @@
         class: "form-control",
         placeholder: "Find a desk near you..."
         %>
-        <%= submit_tag "Search", class: "btn btn-success" %>
+        <%= submit_tag "Search", class: "btn btn-success", id: "search1" %>
       <% end %>
     </div>
 
@@ -24,18 +24,29 @@
     <%= cl_image_tag(desk.photo.key) %>
     <% else %>
     <%= image_tag "Placeholder_image"%>
+          <% end %>
+            <div class="card-product-infos">
+              <h2><%= link_to desk.title, desk_path(desk), class:"link-to-card-product-1" %></h2>
+              <p>$<%= desk.price %> <strong>per day</strong></p>
+              <br>
+                <h2 class="link-to-card-product-2"> Address: <%= desk.location%></h2>
+              <br>
+              <h2 class="link-to-card-product-2"><%= desk.seats %> seat(s) </h2>
+            </div>
+        </div>
+
     <% end %>
+
     <div class="card-product-infos">
       <h2><%= link_to desk.title, desk_path(desk), class:"link-to-card-product-1" %></h2>
       <p>$<%= desk.price %> <strong>per day</strong></p>
       <br>
-      <h2 class="link-to-card-product-2"> Address: <%= desk.location%></h2>
+      <h2 class="link-to-card-product-2"> <%= desk.location%></h2>
       <br>
-      <h2 class="link-to-card-product-2"><%= desk.seats %> seat(s) </h2>
+      <h2 class="link-to-card-product-2"><i class="fas fa-chair"> &#160; </i><%= desk.seats %></h2>
     </div>
   </div>
   <% end %>
-  </div>
 
 <div class="col-6">
     <div id="map"
