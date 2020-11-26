@@ -29,3 +29,11 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+.btn-outline-success a {
+  border-size: none;
+  display: flex;
+  background-color: #06d6a0;
+  border-color: #06d6a0;
+  color: white;
+}
