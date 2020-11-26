@@ -8,7 +8,9 @@ class DesksController < ApplicationController
     @markers = @desks.geocoded.map do |desk|
       {
         lat: desk.latitude,
-        lng: desk.longitude
+        lng: desk.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { desk: desk }),
+        image_url: helpers.asset_url('briefcase-solid.svg')
       }
     end
 
@@ -24,7 +26,6 @@ class DesksController < ApplicationController
 
   def new
     @desk = Desk.new
-
   end
 
   def edit
