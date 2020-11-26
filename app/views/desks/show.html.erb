@@ -1,6 +1,5 @@
 <div id="show-desk-container" class="show-container">
   <div class="show-row">
-    <h1 class="show-desk-title"><%= @desk.title %></h1>
     <div class="col-sm">
 
 
@@ -15,11 +14,12 @@
 
         <div class="show-text">
           <div class="show-border">
-            <h5><i class="fas fa-chair"></i> <%= @desk.seats %> seat(s) </h5>
-            <h3>$ <%= @desk.price %> per day</h3>
-            <p><em><%= @desk.location %></em></p>
+           <h2 class="show-desk-title"><%= @desk.title %></h2>
+            <h3>€<%= @desk.price %> per day</h3>
+            <h4><em><i class="fas fa-map-marker-alt"></i> &#160;<%= @desk.location %></em></h4>
+            <h4><i class="fas fa-chair"></i> <%= @desk.seats %></h4>
           </div>
-          <p id="p">Available between <%= @desk.start_date %> and <%= @desk.end_date %></p>
+          <p id="p">Available between <%= @desk.start_date.parse %> and <%= @desk.end_date.parse %></p>
         </div>
       </div>
         </div>
