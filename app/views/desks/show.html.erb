@@ -1,22 +1,18 @@
-<div class="container">
-
-</div>
-<br>
-
-<div class="container">
+<div id="show-desk-container" class="show-container">
   <div class="row">
     <div class="col-sm">
     <br>
     <br>
-    <h1><%= @desk.title %></h1>
-    <br>
+    <h1 class="show-desk-title"><%= @desk.title %></h1>
     <%= cl_image_tag(@desk.photo.key,
     width: 400, height: 300, crop: :fill) if @desk.photo.attached? %>
     <br>
-    <h2> Price per day: $<%= @desk.price %></h2>
-    <h3> Address: <%= @desk.location %></h3>
-    <h3><%= @desk.seats %> seats </h3>
-    <h4> Available from: <%= @desk.start_date %></h4> <h4> until: <%= @desk.end_date %></h4>
+    <br>
+    <h3> $<%= @desk.price %> per day</h3>
+    <p><em><%= @desk.location %></em></p>
+    <h3><i class="fas fa-chair"></i> <%= @desk.seats %> seat(s) </h3>
+    <p> Available between <%= @desk.start_date %> and <%= @desk.end_date %></p>
+
     <button class="btn btn-success"> <%= link_to "Back to all desks", root_path %></button>
     <button class="btn btn-success"><%= link_to "----- Edit desk -----", edit_desk_path %></button>
     <% user = User.find(@desk.user_id) %>
@@ -25,11 +21,11 @@
     <% end %>
   </div>
     </div>
-    <div class="col-sm">
+<!--     <div class="col-sm">
         <div id="map"
     style="width: 100%; height: 500px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-    </div>
+    </div> -->
   </div>
 <br>
