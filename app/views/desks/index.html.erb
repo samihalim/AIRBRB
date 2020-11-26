@@ -1,8 +1,21 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.pinimg.com/originals/17/5e/da/175eda03beec29af20dfc40a38e5ac68.jpg);">
-  <div class="container">
-    <h1>Air<strong>BRB</strong>, the solution to everything...</h1>
+
+  <div class="container-banner">
+    <h1>air<strong>BRB</strong></h1>
+    <div class="form-group row" id="search">
+        <%= form_tag desks_path, method: :get do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a desk near you..."
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+
   </div>
 </div>
+
 
 <div class="container">
   <%= link_to 'add a desk now', new_desk_path, class: "btn btn-outline-success" %>
