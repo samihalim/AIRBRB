@@ -18,3 +18,22 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
+.container-banner {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+#search {
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#search .form-control {
+  display: inline-block;
+    width: auto;
+}
