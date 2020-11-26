@@ -11,6 +11,12 @@ class DesksController < ApplicationController
         lng: desk.longitude
       }
     end
+
+    if params[:query].present?
+      @desks = Desk.search_by_title_location(params[:query])
+    else
+      @desks = Desk.all
+    end
   end
 
   def show
