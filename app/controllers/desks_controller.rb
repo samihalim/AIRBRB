@@ -24,7 +24,6 @@ class DesksController < ApplicationController
 
   def new
     @desk = Desk.new
-
   end
 
   def edit
@@ -34,7 +33,7 @@ class DesksController < ApplicationController
     @desk = Desk.new(desk_params)
     @desk.user = current_user
 
-    if @desk.save!
+    if @desk.save
       redirect_to @desk, notice: 'A desk was successfully created.'
     else
       render :new

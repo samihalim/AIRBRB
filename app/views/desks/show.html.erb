@@ -3,9 +3,16 @@
     <h1 class="show-desk-title"><%= @desk.title %></h1>
     <div class="col-sm">
 
+
       <div class="show-card">
-        <%= cl_image_tag(@desk.photo.key,
-        width: 750, height: 400, crop: :fill) if @desk.photo.attached? %>
+        <div class="show-image"></div>
+         <% if @desk.photo.attached? %>
+             <%= cl_image_tag(@desk.photo.key,
+        width: 750, height: 400, crop: :fill) %>
+         <% else %>
+            <%= image_tag 'Placeholder_image', class: 'placeholder'%>
+        <% end %>
+
         <div class="show-text">
           <div class="show-border">
             <h5><i class="fas fa-chair"></i> <%= @desk.seats %> seat(s) </h5>
@@ -15,6 +22,7 @@
           <p id="p">Available between <%= @desk.start_date %> and <%= @desk.end_date %></p>
         </div>
       </div>
+        </div>
       <div class="show-buttons">
 
       <button class="btn btn-success"> <%= link_to "Back to all desks", root_path %></button>
@@ -33,6 +41,5 @@
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div> -->
-
 </div>
 <br>
