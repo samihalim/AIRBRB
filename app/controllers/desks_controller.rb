@@ -14,7 +14,7 @@ class DesksController < ApplicationController
         lat: desk.latitude,
         lng: desk.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { desk: desk }),
-        image_url: helpers.asset_url('briefcase-solid.svg')
+        image_url: helpers.asset_url('laptop.svg')
       }
     end
   end
