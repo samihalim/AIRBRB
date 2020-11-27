@@ -98,11 +98,13 @@
 
 .no-hover-link:hover {
   text-decoration: none;
+  color: darkgreen
 }
 
 .link-to-card-product-1 {
   color: #06d6a0;
   font-size: 20px;
+  font-weight: bold;
   &:hover {
   background-color: hsl(0, 0%, 92%);
   text-decoration: none;
