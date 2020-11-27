@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 require 'pry-byebug'
+require "open-uri"
 
 Booking.destroy_all
 Desk.destroy_all
@@ -14,17 +15,21 @@ User.destroy_all
 User.create(first_name: 'John', last_name: 'smith', email: 'a@a.com', password: '654321')
 User.create(first_name: 'Sam', last_name: 'Bam', email: 'bb@a.com', password: '65432134')
 
+
 10.times do
-  Desk.create(
-    title: Faker::Company.catch_phrase,
-    user: User.all.sample,
-    price: Faker::Commerce.price,
-    location:Faker::Address.city,
-    seats: Faker::Vehicle.doors,
-    start_date: DateTime.new(2020, 11, 23),
-    end_date: DateTime.new(2020, 11, 25),
-   )
+desk = Desk.new
+desk.title = Faker::Company.catch_phrase
+desk.user = User.all.sample
+desk.price = Faker::Commerce.price
+desk.location = Faker::Address.city
+desk.seats = Faker::Vehicle.doors
+desk.start_date = DateTime.new(2020, 11, 23)
+desk.end_date = DateTime.new(2020, 11, 25)
+file = URI.open('https://source.unsplash.com/weekly?desk')
+desk.photo.attach(io: file, filename: "#{desk.title}.png", content_type: 'image/png')
+desk.save!
 end
+
 
 3.times do
   Booking.create(
@@ -36,3 +41,6 @@ end
 puts "#{Desk.count} Desks created"
 puts "#{User.count} Users created"
 puts "#{Booking.count} Bookings created"
+
+
+

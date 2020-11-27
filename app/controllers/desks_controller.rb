@@ -3,8 +3,12 @@ class DesksController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
-    @desks = Desk.all.order(updated_at: :desc)
     @user = current_user
+    if params[:query].present?
+      @desks = Desk.search_by_title_location(params[:query]).order(updated_at: :desc)
+    else
+      @desks = Desk.all.order(updated_at: :desc)
+    end
     @markers = @desks.geocoded.map do |desk|
       {
         lat: desk.latitude,
@@ -12,12 +16,6 @@ class DesksController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { desk: desk }),
         image_url: helpers.asset_url('briefcase-solid.svg')
       }
-    end
-
-    if params[:query].present?
-      @desks = Desk.search_by_title_location(params[:query])
-    else
-      @desks = Desk.all
     end
   end
 
