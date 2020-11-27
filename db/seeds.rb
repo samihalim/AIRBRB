@@ -28,15 +28,17 @@ desk.end_date = DateTime.new(2020, 11, 25)
 file = URI.open('https://source.unsplash.com/weekly?desk')
 desk.photo.attach(io: file, filename: "#{desk.title}.png", content_type: 'image/png')
 desk.save!
+1.times do
+  booking = Booking.new
+  booking.user = User.last
+  booking.desk = desk
+  booking.start_date = DateTime.new(2020, 11, 11)
+  booking.end_date = DateTime.new(2020, 11, 13)
+  booking.save!
+end
 end
 
 
-3.times do
-  Booking.create(
-    start_date: DateTime.new(2020, 11, 11),
-    end_date: DateTime.new(2020, 11, 13),
-    )
-end
 
 puts "#{Desk.count} Desks created"
 puts "#{User.count} Users created"

@@ -1,3 +1,5 @@
+
+
 <div id="show-desk-container" class="show-container">
   <div class="show-row">
     <div class="col-sm">
@@ -15,11 +17,11 @@
         <div class="show-text">
           <div class="show-border">
            <h2 class="show-desk-title"><%= @booking.desk.title %></h2>
-            <h3>€ <%= @booking.desk.price %> /day</h3>
-            <h4><em><i class="fas fa-map-marker-alt"></i> &#160;<%= @booking.desk.location %></em></h4>
-            <h4><i class="fas fa-chair"></i> <%= @booking.desk.seats %></h4>
+            <h3>€ -&#160;<%= @booking.desk.price %> /day</h3>
+            <h4><em><i class="fas fa-map-marker-alt"></i> -&#160;<%= @booking.desk.location %></em></h4>
+            <h4><i class="fas fa-chair"></i> -&#160;<%= pluralize @booking.desk.seats, "seat" %></h4>
           </div>
-          <p id="p"><%= @booking.desk.start_date %> and <%= @booking.desk.end_date %></p>
+          <h5 id="p">Booked <%= @booking.desk.start_date.strftime("%m/%d/%y") %> to <%= @booking.desk.end_date.strftime("%m/%d/%y") %></h5
         </div>
       </div>
         </div>
