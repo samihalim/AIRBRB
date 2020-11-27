@@ -90,16 +90,27 @@
   margin-top: 24px;
   margin-bottom: 40px;
   margin-left: 20px;
+  &:hover {
+  background-color: hsl(0, 0%, 93%);
+  text-decoration: hsl(0, 0%, 29%);
+  }
 }
 
-.card-product .link-to-card-product-1 {
+.card-product .card-desk-title {
   color: hsl(0, 0%, 13%);
   font-size: 25px;
+  margin-top: 6px;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
 }
 
-.card-product .link-to-card-product-2 {
+.card-product .card-desk-text {
   color: hsl(0, 0%, 29%);
   font-weight: 400;
+  margin-top: 8px;
+  margin-top: 6px;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
 }
 
 .card-product img {
@@ -130,6 +141,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  margin-top: -10px;
 }
 
 #map {
