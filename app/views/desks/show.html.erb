@@ -26,7 +26,7 @@
       <div class="show-buttons">
 
       <button class="btn btn-success"> <%= link_to "Back to all desks", root_path %></button>
-      <button class="btn btn-success"><%= link_to "----- Edit desk -----", edit_desk_path %></button>
+      <button class="btn btn-success"><%= link_to "Edit desk", edit_desk_path %></button>
       <% user = User.find(@desk.user_id) %>
       <% if user != current_user %>
       <button class="btn btn-success"> <%= link_to 'Book this desk!', new_desk_booking_path(@desk) %></button>
