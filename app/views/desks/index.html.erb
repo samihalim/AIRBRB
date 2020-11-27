@@ -21,7 +21,7 @@
 
   <div class="col-8">
   <% @desks.each do |desk| %>
-  <%= link_to desk_path(desk) do%>
+  <%= link_to desk_path(desk), class:"no-hover-link" do%>
   <div class="card-product">
     <% if desk.photo.attached? %>
     <%= cl_image_tag(desk.photo.key) %>

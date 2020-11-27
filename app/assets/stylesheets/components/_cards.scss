@@ -91,14 +91,22 @@
   margin-bottom: 40px;
   margin-left: 20px;
   &:hover {
-  background-color: hsl(0, 0%, 93%);
-  text-decoration: hsl(0, 0%, 29%);
+  background-color: hsl(0, 0%, 92%);
+  text-decoration: none;
   }
+}
+
+.no-hover-link:hover {
+  text-decoration: none;
 }
 
 .link-to-card-product-1 {
   color: #06d6a0;
   font-size: 20px;
+  &:hover {
+  background-color: hsl(0, 0%, 92%);
+  text-decoration: none;
+  }
 }
 
 .card-product .link-to-card-product-1 {
