@@ -1,9 +1,27 @@
-<div class="container">
-  <% if @booking.desk.photo.attached? %>
-  <%= cl_image_tag(@booking.desk.photo.key,
-  width: 400, height: 300, crop: :fill) %>
-  <% end %>
-  <h1><%= @booking.start_date %></h1>
-  <h2>$<%= @booking.end_date %></h2>
+<div id="show-desk-container" class="show-container">
+  <div class="show-row">
+    <div class="col-sm">
 
+
+      <div class="show-card">
+        <div class="show-image"></div>
+         <% if @booking.desk.photo.attached? %>
+             <%= cl_image_tag(@booking.desk.photo.key,
+        width: 750, height: 400, crop: :fill) %>
+         <% else %>
+            <%= image_tag 'Placeholder_image', class: 'placeholder'%>
+        <% end %>
+
+        <div class="show-text">
+          <div class="show-border">
+           <h2 class="show-desk-title"><%= @booking.desk.title %></h2>
+            <h3>€ <%= @booking.desk.price %> /day</h3>
+            <h4><em><i class="fas fa-map-marker-alt"></i> &#160;<%= @booking.desk.location %></em></h4>
+            <h4><i class="fas fa-chair"></i> <%= @booking.desk.seats %></h4>
+          </div>
+          <p id="p"><%= @booking.desk.start_date %> and <%= @booking.desk.end_date %></p>
+        </div>
+      </div>
+        </div>
+  </div>
 </div>
