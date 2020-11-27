@@ -14,7 +14,7 @@
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
              url('https://source.unsplash.com/weekly?desk')">
       <% end %>
-              <p><%= link_to booking.desk.title, booking_path(booking), class:"booking-title" %></p>
+              <p class="pl-4"><%= link_to booking.desk.title, booking_path(booking), class:"booking-title" %></p>
         <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %>
           <i class="fas fa-trash-alt" id="cards"></i>
         <% end %>
@@ -35,7 +35,7 @@
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
                url('https://source.unsplash.com/weekly?desk')">
         <% end %>
-                <p><%= link_to booking.desk.title, booking_path(booking), class:"booking-title" %></p>
+                <p class="pl-4"><%= link_to booking.desk.title, booking_path(booking), class:"booking-title" %></p>
           <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %>
             <i class="fas fa-trash-alt" id="cards"></i>
           <% end %>

@@ -29,12 +29,13 @@
     <%= image_tag "Placeholder_image"%>
     <% end %>
     <div class="card-product-infos">
-      <h2 class="card-desk-title"><%=  desk.title %></h2>
-      <h3 class="card-desk-text">€ -&#160;<strong><%= desk.price %> </strong>/day</></h3>
+      <h3 class="card-desk-title"><%=  desk.title %></h3>
       <br>
-      <h3 class="card-desk-text"><i class="fas fa-map-marker-alt"></i> -&#160;<%= desk.location%></h3>
-      <br>
-      <h3 class="card-desk-text"><i class="fas fa-chair"> -&#160; </i><%= pluralize desk.seats, "seat" %> </h3>
+      <h4 class="card-desk-text">€ -&#160;<strong><%= desk.price %> </strong>/day</></h4>
+
+      <h4 class="card-desk-text"><i class="fas fa-map-marker-alt"></i> -&#160;<%= desk.location%></h4>
+
+      <h4 class="card-desk-text"><i class="fas fa-chair"> -&#160; </i><%= pluralize desk.seats, "seat" %> </h4>
     </div>
   </div>
 
